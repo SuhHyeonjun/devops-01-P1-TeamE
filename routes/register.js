@@ -5,9 +5,8 @@ router.route(`/`) // app.use(`/register`)
     .post((request, response) => {
         console.log(request.body);
         const {username, email, password} = request.body;
-        let inpData = {username, email, password};
+        const inpData = {username, email, password};
         const outData = {"uid" : 1 };
-        inpData = null;
         if (inpData) {
             return response
                 .status(201)
