@@ -6,7 +6,8 @@
   "scripts": {
     "front_build": "rollup -c",
     "front_start": "sirv client --no-clear",
-    "start": "node ./server/server-express.js"
+    "start" : "node ./server/server-express.js",
+    "dev" : "node ./server/server-express.js"
   },
   "repository": {
     "type": "git",
