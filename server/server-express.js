@@ -20,6 +20,10 @@ app.use(`/`, dbRouter);
 app.use(`/voted_result`, votedResult);
 app.use(`/users`, usersRouter);
 
+app.get(`/`, (req, res) => {
+  return res.status(200).send(`<h1><center>Server is running...</h1></center>`)
+});
+
 app.listen(port, ip, () => {
   console.log(`Server listening on http://${ip}:${port}`)
 });
