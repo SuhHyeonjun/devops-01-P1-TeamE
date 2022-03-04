@@ -9,5 +9,8 @@ router.route(`/`)
         .statusCode(201)
         .send(inpData)
     })
+    .get((request, response) => {
+        return response.statusCode(200);
+    })
 // 여기까지
 module.exports = router;
