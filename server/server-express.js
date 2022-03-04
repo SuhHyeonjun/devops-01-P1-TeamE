@@ -30,6 +30,15 @@ app.get(`/`, (req, res) => { // http://localhost:4000/, 서버 동작 확인
   return res.status(200).send(`<h1><center>Server is running...</h1></center>`)
 });
 
+// app.post('/register', (req, res) => {
+//   reply
+//   .code(200)
+//   .header('Content-Type','application/json')
+//   .send('성공')
+// })
+  
+
+
 app.listen(port, ip, () => {
   console.log(`Server listening on http://${ip}:${port}`)
 });
