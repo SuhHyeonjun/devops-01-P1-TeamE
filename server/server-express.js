@@ -17,7 +17,7 @@ const voteRouter = require(`../routes/vote`);
 const registerRouter = require(`../routes/register`);
 const quizRouter = require(`../routes/quiz`);
 const choiceRouter = require(`../routes/choice`);
-const dbRouter = require(`../db_connect/dbconn`);
+const dbRouter = require(`../model`);
 
 app.use(`/`, dbRouter);
 app.use(`/voted_result`, votedResultRouter); // http://localhost:4000/voted_result
