@@ -5,6 +5,7 @@ router.route(`/`) // app.use(`/register`)
     .post((request, response) => {
         console.log(request.body);
         const {username, email, password} = request.body;
+<<<<<<< HEAD
         const inpData = {username, email, password};
         const outData = {"uid" : 1 };
         if (inpData) {
@@ -20,5 +21,15 @@ router.route(`/`) // app.use(`/register`)
         }
     }
     )    
+=======
+        const inpData = {uid:1};
+        return response
+        .statusCode(201)
+        .send(inpData)
+    })
+    .get((request, response) => {
+        return response.statusCode(200);
+    })
+>>>>>>> cd4841adb5ebe2482164a7ccc43b1ce7f4d4c170
 // 여기까지
 module.exports = router;
