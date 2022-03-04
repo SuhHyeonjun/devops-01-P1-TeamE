@@ -5,7 +5,6 @@ const router = express.Router();
 router.route(`/`) // app.use(`/register`)
     .post((request, response) => {
         const {username, email, password} = request.body;
-
         const inpData = {username, email, password};
         const outData = {"uid" : 1 };
         if (inpData) {
