@@ -4,9 +4,10 @@ const router = express.Router();
 router.route(`/`)
     .get((request, response) => {
         let outData = {
-            "questuon" : "대한민국 수도를 김해로",
+            "questuon" : "주제",
             "words" : []
         };
+
         if (outData) {
             return response
             .status(200)
@@ -18,5 +19,6 @@ router.route(`/`)
             .header('Content-Type','application/json')
             .send({"error" : "Quiz Not Found"})
         }
-    }
-    )
+    })
+
+module.exports = router;
