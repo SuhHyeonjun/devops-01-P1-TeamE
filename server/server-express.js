@@ -14,6 +14,7 @@ const port = process.env.HOST_PORT;
 
 const votedResult = require('../routes/voted_result');
 const usersRouter = require(`../routes/users`);
+const registerRouter = require(`../routes/register`);
 const dbRouter = require(`../db_connect/dbconn`);
 
 app.use(`/`, dbRouter);
