@@ -5,14 +5,13 @@ const mongoConnect = () => {
     if (process.env.NODE_ENV !== 'production') {
         mongoose.set('debug', true); // 몽고 쿼리가 콘솔에서 뜨게 한다.
     }
-    mongoose.connect(process.env.DB_URL, 
-      (error) => {
-        if (error) {
-          console.log('Connection Error with MongoDB', error);
-        } else {
-          console.log('Success to connect MongoDB');
-        }
-      }
+    mongoose.connect(process.env.DB_URL)
+    .then(client => {
+      console.log(`Success to connect DataBase`);
+      // console.log(client)
+    })
+    .catch(error => 
+      console.log('Connection Error with MongoDB', error)
     )
 };
 

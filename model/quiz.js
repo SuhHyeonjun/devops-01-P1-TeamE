@@ -5,7 +5,7 @@ const quizSchema = new Schema({
     quiz_id : {
         type: Number,
         required: true,
-        ref: 'Words'
+        ref: 'WORDS'
     },
     question : {
         type: String,
@@ -13,4 +13,4 @@ const quizSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Quiz', quizSchema);
+module.exports = mongoose.model('QUIZ', quizSchema, `QUIZ`);

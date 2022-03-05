@@ -17,4 +17,4 @@ const candidateSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Candidate', candidateSchema);
+module.exports = mongoose.model('CANDIDATE', candidateSchema, `CANDIDATE`);
