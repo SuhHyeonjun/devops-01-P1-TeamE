@@ -15,7 +15,7 @@ router.route(`/`)
                     return response
                     .status(404)
                     .header('Content-Type','application/json')
-                    .send({"error" : "No Candidate on this site"})
+                    .send({"error" : "No Candidate on this Vote"})
                 }
                 const updateResult = await users.findOneAndUpdate(
                     { "username" : username }, 
