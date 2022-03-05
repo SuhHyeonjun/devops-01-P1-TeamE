@@ -1,5 +1,3 @@
-const express = require(`express`);
-const router = express.Router();
 const mongoose = require('mongoose');
 
 // 몽구스 연결 함수
