@@ -1,6 +1,24 @@
 const express = require(`express`);
 const router = express.Router();
-// API 명세를 보고 여기부터 코드 작성해주세요.
 
-// 여기까지
+router.route(`/`)
+    .get((request, response) => {
+        let outData = {
+            "questuon" : "주제",
+            "words" : []
+        };
+
+        if (outData) {
+            return response
+            .status(200)
+            .header('Content-Type','application/json')
+            .send(outData)
+        } else {
+            return response
+            .status(404)
+            .header('Content-Type','application/json')
+            .send({"error" : "Quiz Not Found"})
+        }
+    })
+
 module.exports = router;

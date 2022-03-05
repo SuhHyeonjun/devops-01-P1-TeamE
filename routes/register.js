@@ -4,7 +4,6 @@ const router = express.Router();
 
 router.route(`/`) // app.use(`/register`)
     .post((request, response) => {
-        console.log(request.body);
         const {username, email, password} = request.body;
         const inpData = {username, email, password};
         const outData = {"uid" : 1 };
@@ -20,6 +19,7 @@ router.route(`/`) // app.use(`/register`)
                     .send({"error" : "Not Found"})
         }
     })    
+
     .get((request, response) => {
         return;
     })

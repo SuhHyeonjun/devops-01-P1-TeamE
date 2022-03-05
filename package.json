@@ -7,7 +7,7 @@
     "front_build": "rollup -c",
     "front_start": "sirv client --no-clear",
     "start": "node ./server/server-express.js",
-    "dev": "node ./server/server-express.js"
+    "dev": "nodemon ./server/server-express.js"
   },
   "repository": {
     "type": "git",
@@ -30,8 +30,10 @@
     "express": "^4.17.3",
 >>>>>>> c8ff18d09661de0203325ba52ed8bd026d724bad
     "fastify": "^3.27.2",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.4",
     "morgan": "^1.10.0",
-    "pg": "^8.7.3",
+    "nodemon": "^2.0.15",
     "rollup": "^2.69.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-css-only": "^3.1.0",
