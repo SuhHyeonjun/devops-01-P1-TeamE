@@ -15,7 +15,7 @@ router.route(`/`)
                     return response
                     .status(404)
                     .header('Content-Type','application/json')
-                    .send({"error" : "Vote Failed"})
+                    .send({"error" : "No Candidate on this site"})
                 }
                 const updateResult = await users.findOneAndUpdate(
                     { "username" : username }, 
@@ -40,14 +40,14 @@ router.route(`/`)
                 return response
                     .status(403)
                     .header('Content-Type','application/json')
-                    .send({ "error" : "Authorization Failed" });
+                    .send({ "error" : "Token Expired" });
             }
         }
         else
             return response
                 .status(403)
                 .header('Content-Type','application/json')
-                .send({ "error" : "Authorization Failed" });
+                .send({ "error" : "No Token" });
     })
  
     
