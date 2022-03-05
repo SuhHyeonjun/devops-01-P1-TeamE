@@ -25,10 +25,7 @@
     "bootstrap": "^5.1.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-<<<<<<< HEAD
-=======
     "express": "^4.17.3",
->>>>>>> c8ff18d09661de0203325ba52ed8bd026d724bad
     "fastify": "^3.27.2",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.4",
