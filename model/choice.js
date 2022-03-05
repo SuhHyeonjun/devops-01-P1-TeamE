@@ -5,13 +5,13 @@ const choiceSchema = new Schema({
     username : {
         type : String,
         required : true,
-        ref : `Users`
+        ref : `USERS`
     },
     word_id : {
         type : Number,
         required : true,
-        ref: 'Words'
+        ref: 'WORDS'
     }
 });
 
-module.exports = mongoose.model('Choice', choiceSchema);
+module.exports = mongoose.model('CHOICE', choiceSchema, `CHOICE`);

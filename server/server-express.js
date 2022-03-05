@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const cookieParser = require(`cookie-parser`);
 const app = express();
 
 require(`dotenv`).config();
@@ -8,6 +9,7 @@ app.use(express.json({"strict":false}));
 app.use(express.static(`../client`));
 app.use(cors());
 app.use(morgan('dev'));
+app.use(cookieParser());
 
 const ip = process.env.HOST_IP;
 const port = process.env.HOST_PORT;
@@ -42,5 +44,5 @@ app.get(`/`, (req, res) => { // http://localhost:4000/, 서버 동작 확인
 });
 
 app.listen(port, ip, () => {
-  console.log(`Begin to run Server time : ${new Date()}\n Server listening on http://${ip}:${port}`)
+  console.log(`Server Start Time : ${new Date()}\n Server listening on http://${ip}:${port}`)
 });

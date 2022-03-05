@@ -4,14 +4,9 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
     uid : {
         type: Number,
-        required: true,
         unique: true,
     },
     username : {
-        type: String,
-        required: true
-    },
-    email : {
         type: String,
         required: true
     },
@@ -21,7 +16,7 @@ const userSchema = new Schema({
     },
     voted_candidate : {
         type: String,
-    }
+    },
 });
 
-module.exports = mongoose.model('Users', userSchema);
+module.exports = mongoose.model('USERS', userSchema, `USERS`);
