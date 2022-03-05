@@ -42,5 +42,5 @@ app.get(`/`, (req, res) => { // http://localhost:4000/, 서버 동작 확인
 });
 
 app.listen(port, ip, () => {
-  console.log(`Server listening on http://${ip}:${port}`)
+  console.log(`Begin to run Server time : ${new Date()}\n Server listening on http://${ip}:${port}`)
 });

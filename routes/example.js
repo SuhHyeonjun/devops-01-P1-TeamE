@@ -22,7 +22,7 @@ router.route(`/`)
 
 router.route(`/deep`) // http://[ip주소]:[port번호]/example/deep
     .get((request, response) => { 
-        
+        return response.status(200).send(`/deep get request here`)
     })
 // 여기까지
 module.exports = router;
