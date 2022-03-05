@@ -12,7 +12,7 @@ router.route(`/`)
             return response
             .status(200)
             .header('Content-Type','application/json')
-            .send("성공")
+            .send(outData)
         } else {
             return response
             .status(404)
