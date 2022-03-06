@@ -4,7 +4,7 @@ const router = express.Router();
 router.route(`/`)
     .get((request, response) => {
         let outData = {
-            "questuon" : "주제",
+            "question" : "주제",
             "words" : []
         };
 

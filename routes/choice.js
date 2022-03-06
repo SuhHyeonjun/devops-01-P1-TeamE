@@ -1,15 +1,18 @@
 const express = require(`express`);
 const router = express.Router();
+const users = require(`../models/users`)
+const words = require(`../models/words`)
 // API 명세를 보고 여기부터 코드 작성해주세요.
 router.route(`/`)
-    .post((request, response) => {
-    const {wid} = request.body;
-    const outData = {"uid" : 1 ,"wid" : 1};
-    if (wid) {
+    .post(async (request, response) => {
+    const {username} = request.body;
+    const outData = {"word_id" : 1};
+    const uid = out
+    if (word_id) {
         return response
             .status(201)
             .header('Content-Type','application/json')
-            .send("성공")
+            .send("outData")
     } else {
         return response
             .status(404)
