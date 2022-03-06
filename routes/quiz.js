@@ -1,34 +1,47 @@
-const quiz = require(`../model/quiz`); // quiz 데이터베이스 불러오기
-const words = require(`../model/words`); // words 데이터베이스 불러오기
+const quiz = require('../model/quiz')
+const words = require('../model/words')
 const express = require(`express`);
 const router = express.Router();
 
-router.route(`/:qid`) // request endpoint : http://{ip}:{port}/quiz/1 2 3 4 5..
+router.route(`/:qid`)
     .get( async (request, response) => {
         const quiz_id = request.params.qid;
-        const questionFindResult = await quiz.find({"quiz_id" : quiz_id});
-        // 질문 찾음
-        if (questionFindResult) {
-            const quizFindResult = await words.find({"quiz_id" : quiz_id}).populate(`quiz_id`);
-            console.log(questionFindResult)
-            // 문항 찾음
-            if (quizFindResult){
+        const questionFindResult = await quiz.findOne({"quiz_id" : quiz_id});
+        const quizFindResult = await words.find({"quiz_id" : quiz_id});
+        if (questionFindResult && quizFindResult){
+            const question = questionFindResult.question;
+            const words = []; // Array
+            if(Array.isArray(quizFindResult) && quizFindResult !== []){
+                for (let i = 0; i < quizFindResult.length; i++) {
+                    let word = quizFindResult[i].word;
+                    words.push(word);
+                }
+                console.log(words);
+                const inpData = {question, words};
+                /**
+                 inpData = {
+                     "question" : question,
+                     "words" : [],
+                 }
+                 */
                 return response
                     .status(200)
                     .header('Content-Type','application/json')
-                    .send(quizFindResult); // { "quiz_id" : 1 }
+                    .send(inpData);
             }
             else {
                 return response
                 .status(404)
                 .header('Content-Type','application/json')
-                .send({"error" : "Quiz Not Found"})    
+                .send({"error" : "Quetion Not Found"});
             }
-        } else {
+            
+        }
+        else{
             return response
             .status(404)
             .header('Content-Type','application/json')
-            .send({"error" : "Quiz Not Found"})
+            .send({"error" : "Quetion Not Found"});
         }
     })
 
