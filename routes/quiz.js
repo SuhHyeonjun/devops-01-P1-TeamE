@@ -8,12 +8,12 @@ router.route(`/`)
      const quiz_id = request.params.qid;
      const questionFindResult = await quiz.find({"quiz_id" : quiz_id})
      const quizFindResult = await words.find({"quiz_id" : quiz_id})
-        if (questionFindResult&quizFindResult)
+        if (questionFindResult&&quizFindResult)
         {
             return response
             .status(200)
             .header('Content-Type','application/json')
-            .send(questionFindResult&quizFindResult);
+            .send(questionFindResult&&quizFindResult);
         
         }
         else
