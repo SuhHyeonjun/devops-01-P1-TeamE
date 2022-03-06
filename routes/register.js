@@ -14,7 +14,7 @@ router.route(`/`) // app.use(`/register`)
             username : username,
             password : password
         }, process.env.SECRET_JWT, {
-            expiresIn: '2h',
+            expiresIn: '7d',
             issuer : `TEAM_E`
         });
         // console.log(usertoken);

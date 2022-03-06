@@ -29,12 +29,12 @@ function serve() {
 }
 
 export default {
-	input: 'client/main.js',
+	input: 'client/src/main.js',
 	output: {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'client/build/bundle.js'
+		file: 'client/public/bundle.js'
 	},
 	plugins: [
 		svelte({
@@ -54,7 +54,7 @@ export default {
 		// https://github.com/rollup/plugins/tree/master/packages/commonjs
 		resolve({
 			browser: true,
-			dedupe: ['svelte']
+			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
 		}),
 		commonjs(),
 
@@ -64,8 +64,8 @@ export default {
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload('client'),
-
+		!production && livereload('public'),
+ 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
 		production && terser()

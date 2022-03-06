@@ -2,12 +2,12 @@ const mongoose = require(`mongoose`);
 
 const { Schema } = mongoose;
 const choiceSchema = new Schema({
-    username : {
-        type : String,
+    userid : {
+        type : Number,
         required : true,
         ref : `USERS`
     },
-    word_id : {
+    cid : {
         type : Number,
         required : true,
         ref: 'WORDS'

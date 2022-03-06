@@ -5,7 +5,7 @@
   "main": "server-express.js",
   "scripts": {
     "front_build": "rollup -c",
-    "front_start": "sirv client --no-clear",
+    "front_start": "sirv client/public --dev --single",
     "start": "node ./server/server-express.js",
     "dev": "nodemon ./server/server-express.js"
   },
