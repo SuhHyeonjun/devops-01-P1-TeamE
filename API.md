@@ -3,8 +3,8 @@
 | 조회 | 전체 후보자 투표수 조회 | GET | /voted_result | None |
 ```
 // 성공 
-// * 상태코드 - 200
-// * Response body
+* 상태코드 - 200
+* 응답 body
 [ 
     {
         “cid” : Number,
@@ -14,10 +14,10 @@
 ]
 
 // 실패
-// * 상태코드 - 404...
-// * Response body
+* 상태코드 - 404
+* 응답 body
 {
-	"error" : "Choice Failed"
+	"error" : "No Candidates"
 }
 
 ```
@@ -25,22 +25,25 @@
 |:--------:|:----:|:------:|:----------:|:---------:|
 
 ```
-// 성공 
-// * 상태코드 - 200
-// * Response body
-[ 
+* 요청 body
     {
-        “cid” : Number,
-        “name” : String,
-        “votes” : Number
-    }, … 
-]
+        “username” : String,
+        “password” : String
+    },
+
+// 성공 
+* 응답
+* 상태코드 - 201
+	{
+		"uid" : Number,
+		"token" : "Token Published"
+	}
 
 // 실패
-// * 상태코드 - 404...
-// * Response body
+* 상태코드 - 404...
+* Response body
 {
-	"error" : "Choice Failed"
+	"error" : "Register Failed"
 }
 
 ```
@@ -48,17 +51,22 @@
 |:--------:|:----:|:------:|:----------:|:---------:|
 
 ```
+* 요청 body
 {
-	“Voted_candidate” : “candidate_id”
+	“voted_candidate” : “candidate_id”
 }
 
-// 성공 - 201
-// 응답 바디 
+// 성공
+* 상태코드 - 201
+* 응답 body
 {
-	“usr_name” : String,
-	“voted_candidate” : String,
+	“username” : String,
+	“voted_candidate” : Number,
 }
-// 실패 - 404 (Not Found)
+
+// 실패 
+* 상태코드 - 404
+* 응답 body
 {
 	"error" : "Vote Failed"
 }
@@ -67,20 +75,22 @@
 | 생성 | 성향 테스트 문항 선택 | POST | /choice | 하단에 명기 |
 |:--------:|:----:|:------:|:----------:|:---------:|
 ```
-요청 바디 
+* 요청 body 
 {
 	“wid” : Number,
 }
-// 성공 - 201 /
- 
-응답 바디
- 
+
+// 성공
+* 상태코드 - 201
+* 응답 body
 {
 	“uid” : Number,
-	“wid” : Number,
+	“cid” : Number,
 }
-// 실패 - 404
 
+// 실패
+* 상태코드 - 404
+* 응답 body
 {
 	"error" : "Choice Failed"
 }
@@ -89,17 +99,21 @@
 | 조회 | 퀴즈 조회 | GET | /quiz/:qid | None |
 |:--------:|:----:|:------:|:----------:|:---------:|
 ```
-// 성공 - 200
-응답 바디  
+// 성공
+* 상태코드 - 200
+* 응답 body
 {
 	“question” : String,
 	“Words” : [
 		word,
 		word,
+		word
 	…]
 }
 
-// 실패 - 404
+// 실패
+* 상태코드 - 404
+* 응답 body
 {
 	"error" : "Quiz Not Found"
 }
