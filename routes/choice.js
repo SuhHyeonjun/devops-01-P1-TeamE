@@ -13,8 +13,8 @@ router.route(`/`)
             try {
                 const userdata = jwt.verify(token, process.env.SECRET_JWT);
                 const username = userdata.username; //위에서 토큰을 받았다면 username을 줌
-                const userpwd = userdata.userpwd; //위에서 토큰을 받았다면 userpwd를 줌.
-                const findData = {username, userpwd}; // username, userpwd 불러옴.
+                const userpwd = userdata.password; //위에서 토큰을 받았다면 password를 줌.
+                const findData = {username, userpwd}; // username, password 불러옴.
                 const user = await users.findOne(findData); // 위 findData로 users 데이터베이스에서 uid를 찾음
                 const userid = user.uid;
                 const reqWID = request.body.wid; //WID 요청 바디
@@ -41,7 +41,7 @@ router.route(`/`)
                     .send({"error" : "Choice Failed"});
                 }
                 
-            } catch(error) {
+            } catch(error) { // General Error handling
                 return response
                     .status(403)
                     .header('Content-Type','application/json')

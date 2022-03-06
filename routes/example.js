@@ -1,7 +1,7 @@
 const express = require(`express`);
 const router = express.Router();
 const candidate = require(`../model/candidate`)
-// API 명세를 보고 여기부터 코드 작성해주세요.
+// 코드 연습장입니다.
 
  // http://[IP주소]:[Port번호]/example <- 이 주소를 입력하면 여기 코드가 실행됩니다.
 router.route(`/`)
