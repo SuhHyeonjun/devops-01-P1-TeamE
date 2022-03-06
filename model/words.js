@@ -19,6 +19,7 @@ const wordsSchema = new Schema({
     quiz_id : {
         type: Number,
         required: true,
+        ref: `QUIZ`,
     }
 });
 
