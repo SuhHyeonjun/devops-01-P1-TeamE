@@ -16,7 +16,6 @@ router.route(`/:qid`)
                     let word = quizFindResult[i].word;
                     words.push(word);
                 }
-                console.log(words);
                 const inpData = {question, words};
                 /**
                  inpData = {
@@ -35,7 +34,6 @@ router.route(`/:qid`)
                 .header('Content-Type','application/json')
                 .send({"error" : "Quetion Not Found"});
             }
-            
         }
         else{
             return response
