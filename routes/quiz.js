@@ -14,14 +14,13 @@ router.route(`/`)
             .status(200)
             .header('Content-Type','application/json')
             .send(questionFindResult&&quizFindResult);
-        
         }
         else
         {
             return response
             .status(404)
             .header('Content-Type','application/json')
-            .send({"error" : "Quetion Not Found"})
+            .send({"error" : "Quetion Not Found"});
         }
     })
 
