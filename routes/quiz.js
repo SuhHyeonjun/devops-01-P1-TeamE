@@ -17,12 +17,6 @@ router.route(`/:qid`)
                     words.push(word);
                 }
                 const inpData = {question, words};
-                /**
-                 inpData = {
-                     "question" : question,
-                     "words" : [],
-                 }
-                 */
                 return response
                     .status(200)
                     .header('Content-Type','application/json')
@@ -32,14 +26,14 @@ router.route(`/:qid`)
                 return response
                 .status(404)
                 .header('Content-Type','application/json')
-                .send({"error" : "Quetion Not Found"});
+                .send({"error" : "Cannot Make Quiz"});
             }
         }
         else{
             return response
             .status(404)
             .header('Content-Type','application/json')
-            .send({"error" : "Quetion Not Found"});
+            .send({"error" : "Cannot Make Quiz"});
         }
     })
 
