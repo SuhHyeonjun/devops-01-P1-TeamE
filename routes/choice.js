@@ -18,7 +18,7 @@ router.route(`/`)
                 const user = await users.findOne(findData); // 위 findData로 users 데이터베이스에서 uid를 찾음
                 const userid = user.uid;
                 const reqWID = request.body.wid; //WID 요청 바디
-                const candidateFindresult = await words.findOne({"word_id" : reqWID}) // 데이터베이스에서 WID값을 찾음
+                const candidateFindresult = await words.findOne({"wordid" : reqWID}) // 데이터베이스에서 WID값을 찾음
                 if(candidateFindresult) {
                     const cid = candidateFindresult.cid;
                     const inpData = {userid, cid}; // uid = userID, cid = foundCID
