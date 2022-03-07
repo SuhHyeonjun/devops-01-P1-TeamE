@@ -22,12 +22,6 @@ router.route(`/`)
                 if(candidateFindresult) {
                     const cid = candidateFindresult.cid;
                     const inpData = {userid, cid}; // uid = userID, cid = foundCID
-                    /*
-                        {
-                            "userid" : userid,
-                            "cid" : cid
-                        }
-                    */
                     const popResult = new choices(inpData); // choices 데이터를 새로 만듬
                     await popResult.save(); // 새로 만든 choices 데이터를 저장. 위와 커플함수
                     return response  // 선택했을때  userID와 foundCID를 출력
