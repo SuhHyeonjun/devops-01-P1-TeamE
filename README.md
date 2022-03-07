@@ -1,4 +1,6 @@
 # 너의 대통령은 웹 애플리케이션용 웹서버
+
+[ERD 설계](https://adaptable-armchair-920.notion.site/ERD-bc0b09c79f4f40aebcd9b8c7809b2e9c)
 ---
 ## <u>npm install</u>
 
