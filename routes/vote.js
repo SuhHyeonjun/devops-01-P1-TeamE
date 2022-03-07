@@ -36,11 +36,11 @@ router.route(`/`)
                     .header('Content-Type','application/json')
                     .send({"error" : "Vote Failed"})
                 }
-            } catch {
+            } catch(error) {
                 return response
-                    .status(403)
+                    .status(400)
                     .header('Content-Type','application/json')
-                    .send({ "error" : "Token Expired" });
+                    .send({ "error" : error });
             }
         }
         else

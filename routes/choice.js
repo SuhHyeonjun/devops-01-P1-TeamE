@@ -43,7 +43,7 @@ router.route(`/`)
                 
             } catch(error) { // General Error handling
                 return response
-                    .status(403)
+                    .status(400)
                     .header('Content-Type','application/json')
                     .send({ "error" : `${error}` });
             }
